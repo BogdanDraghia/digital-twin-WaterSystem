@@ -4,6 +4,7 @@ import './App.css';
 import { useRef, Suspense } from 'react'
 import { Canvas ,Loader} from '@react-three/fiber'
 import { Bounds, useBounds, OrbitControls, ContactShadows, Edges,useGLTF  } from '@react-three/drei'
+import Reset from './components/ui/navigation/ResetCamera';
 
 
 function Room(props:any) {
@@ -38,6 +39,8 @@ function Box(props: JSX.IntrinsicElements['mesh']) {
 
 export default function App() {
   return (
+    <>
+    <Reset/>
     <Canvas shadows camera={{ position: [0, -10, 80], fov: 50 }} dpr={[1, 2]}>
       <color attach="background" args={['#f0f0f0']} />
       <ambientLight intensity={0.5} />
@@ -55,6 +58,7 @@ export default function App() {
       </Suspense>
       <OrbitControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 1.75} />
     </Canvas>
+    </>
   )
 }
 
