@@ -1,11 +1,5 @@
-
-
-
 const Reset = () => {
-  return (
-    <div>
-      reset
-    </div>)
+  return <div>reset</div>
 }
 
 export default Reset
