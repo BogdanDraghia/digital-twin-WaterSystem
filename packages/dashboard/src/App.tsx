@@ -3,15 +3,37 @@ import './App.css';
 
 import { useRef, Suspense } from 'react'
 import { Canvas ,Loader} from '@react-three/fiber'
-import { Bounds, useBounds, OrbitControls, ContactShadows, Edges,useGLTF  } from '@react-three/drei'
+import { Bounds, useBounds, OrbitControls, ContactShadows, Edges,useGLTF, Gltf  } from '@react-three/drei'
 import Reset from './components/ui/navigation/ResetCamera';
 
 
 function Room(props:any) {
-  const glft = useGLTF('roomtest1.glb',true)
+  const node:any = useGLTF('roomtest1.glb',true)
+  return (
+    <Suspense fallback={null}> 
+      <mesh geometry={node.nodes.room.geometry} material={node.nodes.room.material} {...props} dispose={null} />
+    </Suspense>
+  )
+}
+
+function Sink(props:any) {
+  const node:any = useGLTF('sink.glb',true)
+  console.log(node)
+  const ref = useRef<THREE.Mesh>(null!)
+  const [isSelected, setIsSelected] = useState(false)
   return (
     <Suspense fallback={null}>
-      <primitive object={glft.scene} />
+      <mesh 
+            ref={ref}
+            onPointerMove={(e) => (e.stopPropagation(), setIsSelected(true))}
+            onPointerOut={(e) => setIsSelected(false)}
+      geometry={node.nodes.Cube.geometry} material={node.nodes.Cube.material} {...props} dispose={null} >
+
+{isSelected &&
+        <Edges color={"#0B2847"} />
+    
+      }
+      </mesh>
     </Suspense>
   )
 }
@@ -50,8 +72,9 @@ export default function App() {
         <Bounds fit clip observe margin={1.2}>
           <SelectToZoom>
             <Box rotation={[0, 0, 0]} position={[-1, 0.095, 0.5]} />
-            <Box rotation={[0, 1.55, 0]} position={[2, 0.095, 2.96]} />
-            <Room position={[0, 0, 0]}/>
+            <Box rotation={[0, 1.55, 0]} position={[-2, 0.095, 2.96]} />
+            <Room position={[0, 0, 0]} />
+            <Sink position={[2, 0.2, 3.05]} scale={0.3}  rotation={[0, -1.55, 0]}/>
           </SelectToZoom>
         </Bounds>
         <ContactShadows rotation-x={Math.PI / 2} position={[0, -35, 0]} opacity={0.2} width={200} height={200} blur={1} far={50} />
