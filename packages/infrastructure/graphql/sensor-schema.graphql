@@ -1,0 +1,24 @@
+type WaterSensor {
+  id: ID!
+  location: String
+  currentWaterLevel: Float
+  temperature: Float
+  pH: Float
+  dissolvedOxygen: Float
+  salinity: Float
+  turbidity: Float
+  lastReadingTimestamp: String
+}
+
+
+type Query { 
+    getSensorData: [ WaterSensor! ]
+}
+
+input WaterSensorCreate{
+    location: String!
+}
+
+type Mutation { 
+    updateSensorData(input : WaterSensorInput!):WaterSensor
+}
