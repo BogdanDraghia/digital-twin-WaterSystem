@@ -12,7 +12,7 @@ import {
   ContactShadows,
   Edges,
   useGLTF,
-  Gltf
+  Html
 } from '@react-three/drei'
 import Reset from './components/ui/navigation/ResetCamera'
 
@@ -77,6 +77,16 @@ function Box(
       <meshStandardMaterial
         color={isSelected ? '#6aa7e8' : '#B8D5F4'}
       />
+      {
+        isSelected &&<Html distanceFactor={10}>
+        <div style={{
+          position:'absolute',
+          zIndex:'-1',
+          height:"100",width:"120",backgroundColor:"red"}}>
+          This box is selected
+        </div>
+      </Html>
+      }
     </mesh>
   )
 }
@@ -98,7 +108,6 @@ export default function App() {
           args={['#f0f0f0']}
         />
         <ambientLight intensity={0.5} />
-        {/* <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} /> */}
         <pointLight position={[50, 100, 100]} />
         <Suspense fallback={null}>
           <Bounds fit clip observe margin={1.2}>
@@ -141,7 +150,6 @@ export default function App() {
 
 function SelectToZoom({ children }: any) {
   const api = useBounds()
-  console.log(api)
   return (
     <group
       onClick={e => (
