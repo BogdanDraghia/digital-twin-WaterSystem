@@ -8,7 +8,9 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk-build": "cdk deploy"
+    "cdk-build": "cdk deploy",
+    "cdk-build-iot":"cdk deploy CertificateStack",
+    "cdk-destroy-iot":"cdk destroy CertificateStack -f"
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",

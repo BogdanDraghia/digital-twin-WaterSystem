@@ -1,6 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import * as appsync from 'aws-cdk-lib/aws-appsync';
-import * as dynamodb from 'aws-cdk-lib/aws-dynamodb'
+import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import { Construct } from 'constructs';
 import path = require('path')
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
@@ -46,7 +46,5 @@ export class InfrastructureStack extends cdk.Stack {
       ),
       responseMappingTemplate: appsync.MappingTemplate.dynamoDbResultItem(),
     });
-    
-
   }
 }
