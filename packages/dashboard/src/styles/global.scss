@@ -1,0 +1,14 @@
+@import 'reset';
+
+body{
+    background-color: var(--main-bg-color);
+}
+
+#root {
+    
+    background-color: var(--main-bg-color);
+}
+:root {
+    --accent:#5959c9;
+    --main-bg-color: #f2f2ff;
+  }

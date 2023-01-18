@@ -1,0 +1,35 @@
+
+.Layout {
+    display: flex;
+    .children{
+        display: flex;
+        flex: 1;
+    }
+}
+
+.SideBarNavigation{
+    max-width: 100px;
+    height: 100vh;
+    transition: width 0.2s ease-in-out;
+    .wrap{
+        .sidebarControl{
+            height: 20px;
+            width: 20px;
+            background-color: var(--accent);
+            cursor: pointer;
+        }
+        .navigationMenuWrap{
+            flex-direction: column;
+            display: flex;
+            a{
+                text-decoration: none;
+                color: inherit; /* blue colors for links too */
+                    text-decoration: inherit; /* no underline */
+
+            }
+        }
+
+
+    }
+
+}
