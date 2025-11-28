@@ -1,0 +1,13 @@
+.DeviceData{
+    display: flex;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    border-radius: var(--border-medium);
+    background-color: white;
+    .Wrap{
+        display: flex;
+        flex-direction: column;
+    }
+}

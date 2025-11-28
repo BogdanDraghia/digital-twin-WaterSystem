@@ -11,13 +11,14 @@ import {
   ContactShadows,
   Edges,
   useGLTF,
-  Html
 } from '@react-three/drei'
-
-
+import DeviceData from '../../components/ui/devices/DeviceData'
 
 const HostpitalBathroom3Dscene = ()=>{
-
+const MockDeviceData = {
+  name:'device1',
+  location:'center'
+}
 const Room =(props: any)=> {
   const node: any = useGLTF('roomtest1.glb', true)
   return (
@@ -31,8 +32,6 @@ const Room =(props: any)=> {
     </Suspense>
   )
 }
-
-
 const Sink=(props: any)=> {
   const node: any = useGLTF('sink.glb', true)
   console.log(node)
@@ -59,7 +58,6 @@ const Sink=(props: any)=> {
     </Suspense>
   )
 }
-
     const SelectToZoom =({ children }: any)=>{
         const api = useBounds()
         return (
@@ -77,8 +75,7 @@ const Sink=(props: any)=> {
           </group>
         )
       }
-
-      const Box = (props: JSX.IntrinsicElements['mesh'])=>{
+const Box = (props: JSX.IntrinsicElements['mesh'])=>{
 
   const ref = useRef<THREE.Mesh>(null!)
   const [isSelected, setIsSelected] =
@@ -161,6 +158,7 @@ const Sink=(props: any)=> {
               maxPolarAngle={Math.PI / 1.75}
             />
           </Canvas>
+          <DeviceData {...MockDeviceData}/>
         </>
       )
 }

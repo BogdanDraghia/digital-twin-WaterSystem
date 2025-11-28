@@ -1,6 +1,9 @@
 @import 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
+
 
 body{
+    font-family: 'Noto Sans', sans-serif;
     background-color: var(--main-bg-color);
 }
 
@@ -10,5 +13,7 @@ body{
 }
 :root {
     --accent:#5959c9;
+    --border-small:5px;
+    --border-medium:10px;
     --main-bg-color: #f2f2ff;
   }

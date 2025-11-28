@@ -2,7 +2,6 @@ import { useState } from 'react'
 import style from './Layout.module.scss'
 import { Link } from 'react-router-dom'
 const SideBarNavigation = () => {
-    
     const [sideBarOpen,setSideBarOpen]= useState(true)
     const navigationMenu = [
         { title: '3D WaterSystem',link:'/dashboard3d' },
@@ -15,13 +14,11 @@ const SideBarNavigation = () => {
    }
     return (
         <div 
-
         className={style.SideBarNavigation} 
-        style={{width: sideBarOpen?'200px':'500px'}}
         >
             <div className={style['wrap']}>
-            <div         onClick={()=>handleSideBarState()} className={style['sidebarControl']}>
-            </div>
+            {/* <div         onClick={()=>handleSideBarState()} className={style['sidebarControl']}>
+            </div> */}
             <div className={style['navigationMenuWrap']}>
             {navigationMenu.map((data,index)=>{
                 return (
