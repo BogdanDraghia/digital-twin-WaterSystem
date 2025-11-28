@@ -1,10 +1,17 @@
 {
 	"name": "Debian",
-	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"build": {
+		"dockerfile": "Dockerfile",
+
+	},
 	"features": {
-		"ghcr.io/devcontainers/features/aws-cli:1": {},
-		"ghcr.io/devcontainers/features/node:1": {},
-		"ghcr.io/devcontainers-contrib/features/typescript:2": {}
+		"ghcr.io/devcontainers/features/aws-cli:1": {
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+
+		},
+		"ghcr.io/devcontainers-contrib/features/typescript:2": {
+		}
 	},
 	"appPort": ["3000:3000","3001:3001","3002:3002","3003:30003"],
 	"remoteUser": "root"
