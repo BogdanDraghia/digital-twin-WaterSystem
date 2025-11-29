@@ -1,11 +1,12 @@
 {
-    "files": [],
-    "references": [
-        { "path": "common" },
-        { "path": "dashboard"},
-        { "path": "infrastructure" },
-        { "path": "mobile" },
-        { "path": "server" },
-        { "path": "simulation" },
-    ]
+  "files": [],
+  "references": [
+    { "path": "common" },
+    { "path": "dashboard" },
+    { "path": "infrastructure" },
+    { "path": "mobile" },
+    { "path": "server" },
+    { "path": "simulation" },
+    { "path": "web" }
+  ]
 }

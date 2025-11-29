@@ -4,7 +4,8 @@
   "description": "Project",
   "main": "index.js",
   "workspaces": [
-    "packages/*"
+    "packages/web",
+    "packages/common"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,8 +27,8 @@
   "devDependencies": {
     "@types/jest": "^29.2.5",
     "@types/node": "^18.11.18",
-    "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.10",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
     "eslint": "^8.31.0",
