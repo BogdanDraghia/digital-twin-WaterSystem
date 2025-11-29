@@ -1,0 +1,48 @@
+.Layout {
+  display: flex;
+  position: relative;
+  height: 100vh;
+
+  .children {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.SideBarNavigation {
+  position: absolute;
+  max-width: 500px;
+  z-index: 5;
+  transition: width 0.2s ease-in-out;
+  .wrap {
+    padding: 10px;
+    .sidebarControl {
+      height: 40px;
+      width: 40px;
+      border-radius: var(--border-small);
+      background-color: var(--accent);
+      cursor: pointer;
+    }
+    .navigationMenuWrap {
+      width: fit-content;
+      border-radius: var(--border-medium);
+      margin: 15px 0px;
+      padding: 10px;
+      flex-direction: row;
+      display: flex;
+      gap: 20px;
+      a {
+        box-shadow: 0px 2px 8px rgb(0 0 0 / 5%);
+        padding: 10px 15px;
+        background-color: #ffffff;
+        border-radius: var(--border-medium);
+        text-decoration: none;
+        color: inherit; /* blue colors for links too */
+        text-decoration: inherit; /* no underline */
+        &:hover {
+          background-color: #f2f2f2;
+        }
+      }
+    }
+  }
+}
